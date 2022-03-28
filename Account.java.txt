@@ -1,0 +1,36 @@
+
+public class Account {
+
+	Type type;
+	String name;
+	Address address;
+	float balance_amount;
+	String created_date;
+	STATUS status;
+	
+	public Account(Type type , String name , Address address , float balance_amount , String created_date , STATUS status) {
+
+		this.type = type;
+		this.name = name;
+		this.address = address;
+		this.balance_amount = balance_amount;
+		this.created_date = created_date;
+		this.status = status;
+	}
+	
+	public void deposit(float amount) {
+		
+		this.balance_amount = this.balance_amount + amount;
+		System.out.println("Amount deposited successfully.Updated balance = "+this.balance_amount);
+		
+	}
+	public void withdraw(float amount) {
+		
+		if(amount <= this.balance_amount) {
+			this.balance_amount = this.balance_amount - amount;
+			System.out.println("Amount withdrawn successfully.Updated balance = "+this.balance_amount);
+		}
+		else
+			throw new IllegalArgumentException("Amount cannot be greater than current balance");
+	}
+}

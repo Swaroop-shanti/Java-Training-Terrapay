@@ -1,0 +1,15 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Address a1 = new Address("Bangalore" , "Karnataka" , 132456);
+		Account A1 =  new Account(Type.SAVINGS ,"Swaroop" , a1 , 500.50F , "28/03/2022" , STATUS.ACTIVE);
+		A1.deposit(200);
+		A1.withdraw(150.25F);
+		//A1.withdraw(1000F);
+		System.out.println(A1.balance_amount);
+		
+	}
+
+}
